@@ -20,5 +20,6 @@ percent_complete =  0
 
 while True:
      time.sleep(0.1)
-     my_bar.progress((percent_complete + 1) % 100)
+     percent_complete += 1
+      my_bar.progress((percent_complete + 1) % 100)
 'Does this get printed??'
