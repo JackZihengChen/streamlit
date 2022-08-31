@@ -16,9 +16,9 @@ st.line_chart(chart_data)
 
 # Add a placeholder
 my_bar = st.progress(0)
+percent_complete =  0
 
 while True:
-     percent_complete =  0
      time.sleep(0.1)
      my_bar.progress((percent_complete + 1) % 100)
 'Does this get printed??'
