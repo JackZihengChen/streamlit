@@ -15,8 +15,7 @@ st.line_chart(chart_data)
 'Starting a long computation...'
 
 # Add a placeholder
-latest_iteration = st.empty()
-bar = st.progress(0)
+my_bar = st.progress(0)
 
 while True:
      percent_complete =  0
