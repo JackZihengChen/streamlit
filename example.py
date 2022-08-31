@@ -19,7 +19,7 @@ latest_iteration = st.empty()
 bar = st.progress(0)
 
 while True:
-  percent_complete =  0
-  time.sleep(0.1)
-  my_bar.progress((percent_complete + 1) % 100)
+     percent_complete =  0
+     time.sleep(0.1)
+     my_bar.progress((percent_complete + 1) % 100)
 'Does this get printed??'
