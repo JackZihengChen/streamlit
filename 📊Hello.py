@@ -8,11 +8,9 @@ st.set_page_config(
 st.write("# Welcome to Streamlit! 👋")
 
 st.sidebar.success("Select a demo above.")
-st.sidebar.("Select a demo above.")
 st.sidebar.info('This is a purely informational message', icon="ℹ️")
 st.sidebar.warning('This is a warning', icon="⚠️")
 st.sidebar.error('This is an error', icon="🚨")
-st.sidebar.snow()
 
 
 
@@ -34,6 +32,9 @@ st.markdown(
 """
 )
 
+
+"### Code segment in Python"
+
 code = '''
 def hello():
     print("Hello, Streamlit!")
@@ -41,3 +42,14 @@ def hello():
 st.code(code, language='python')
 
 st.balloons()
+
+
+"### Code segment in C"
+
+code = '''
+int hello(int input){
+    printf("Hello, Streamlit!");
+    return 5;
+}
+'''
+st.code(code, language='c')
