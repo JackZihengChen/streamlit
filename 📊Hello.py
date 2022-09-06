@@ -8,6 +8,13 @@ st.set_page_config(
 st.write("# Welcome to Streamlit! 👋")
 
 st.sidebar.success("Select a demo above.")
+st.sidebar.("Select a demo above.")
+st.sidebar.info('This is a purely informational message', icon="ℹ️")
+st.sidebar.warning('This is a warning', icon="⚠️")
+st.sidebar.error('This is an error', icon="🚨")
+st.sidebar.snow()
+
+
 
 st.markdown(
     """
@@ -26,3 +33,11 @@ st.markdown(
     - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
 """
 )
+
+code = '''
+def hello():
+    print("Hello, Streamlit!")
+'''
+st.code(code, language='python')
+
+st.balloons()
