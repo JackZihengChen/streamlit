@@ -102,47 +102,24 @@ my_bar = st.progress(0)
 
 st.button('*UPDATE*')
 
-while True:
-     day_of_week = datetime.today().weekday()
-     now = datetime.now()
 
-     if day_of_week == 3:
-          start_time = datetime(now.year,now.month,now.day,13,00)
-          end_time = datetime(now.year,now.month,now.day,17,00)
-     elif day_of_week == 1 or day_of_week == 2:
-          start_time = datetime(now.year,now.month,now.day,8,00)
-          end_time = datetime(now.year,now.month,now.day,16,00)
-     duration = (now - start_time).total_seconds()
-     total = (end_time - start_time).total_seconds()
+day_of_week = datetime.today().weekday()
+now = datetime.now()
 
-     start_time = None
-     end_time = None
-     # st.write("Current Time is ", now.strftime("%H:%M:%S"))
+if day_of_week == 3:
+    start_time = datetime(now.year,now.month,now.day,13,00)
+    end_time = datetime(now.year,now.month,now.day,17,00)
+elif day_of_week == 1 or day_of_week == 2:
+    start_time = datetime(now.year,now.month,now.day,8,00)
+    end_time = datetime(now.year,now.month,now.day,16,00)
+duration = (now - start_time).total_seconds()
+total = (end_time - start_time).total_seconds()
 
-     time.sleep(0.1)
-     
-     percent_complete =  (duration/total)*100
-     my_bar.progress(int(percent_complete) % 100)
+start_time = None
+end_time = None
+# st.write("Current Time is ", now.strftime("%H:%M:%S"))
 
-# while True:
-#      now = datetime.now()
-#      current_time = now.strftime("%H:%M:%S")
-#      st.write("Current Time =", current_time)
+time.sleep(0.1)
 
-# chart_data = pd.DataFrame(
-#      np.random.randn(20, 3),
-#      columns=['a', 'b', 'c'])
-
-# st.line_chart(chart_data)
-
-# 'Starting a long computation...'
-
-# # Add a placeholder
-# my_bar = st.progress(0)
-# percent_complete =  0
-
-# while True:
-#      time.sleep(0.1)
-#      percent_complete += 1
-#      my_bar.progress((percent_complete + 1) % 100)
-# 'Does this get printed??'
+percent_complete =  (duration/total)*100
+my_bar.progress(int(percent_complete) % 100)
