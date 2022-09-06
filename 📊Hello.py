@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit_modal as modal
 import streamlit.components.v1 as components
 
 
@@ -57,19 +56,24 @@ int hello(int input){
 '''
 st.code(code, language='c')
 
-"### Modal"
-open_modal = st.button("Pop out window")
-if open_modal:
-    modal.open()
 
-if modal.is_open():
-    with modal.container():
-        "### Interacting with the modal refreshes the entire webpage"
-        st.write("Some fancy text")
-        value = st.checkbox("Check me")
-        st.write(f"Checkbox checked: {value}")
+"### Modal not supported by cloud"
+code = '''
+import streamlit_modal as modal
+'''
+st.code(code, language='python')
+# open_modal = st.button("Pop out window")
+# if open_modal:
+#     modal.open()
+
+# if modal.is_open():
+#     with modal.container():
+#         "### Interacting with the modal refreshes the entire webpage"
+#         st.write("Some fancy text")
+#         value = st.checkbox("Check me")
+#         st.write(f"Checkbox checked: {value}")
         
-        "### Inserting simple HTML with CSS stylesheet"
-        HtmlFile = open("Okta.HTML", 'r', encoding='utf-8')
-        source_code = HtmlFile.read() 
-        components.html(source_code, width=750, height=500, scrolling=True)
+#         "### Inserting simple HTML with CSS stylesheet"
+#         HtmlFile = open("Okta.HTML", 'r', encoding='utf-8')
+#         source_code = HtmlFile.read() 
+#         components.html(source_code, width=750, height=500, scrolling=True)
